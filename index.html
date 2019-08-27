@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,700,700i|Libre+Baskerville:400,400i,700|Merriweather:400,400i,700,700i|Space+Mono:400,400i,700,700i|Work+Sans:400,600,700&display=swap" rel="stylesheet">
+    <style media="screen">
+      html, body {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 0;
+      }
+      #text {
+        font-size: 24px;
+        text-align: center;
+        transform: scale(1.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">Cryptocurrency</div>
+  </body>
+  <script type="text/javascript">
+    const text = document.getElementById('text');
+    const fonts = [
+      { family: 'Work Sans', size: '24px' },
+      { family: 'EB Garamond', size: '29px' },
+      { family: 'Libre Baskerville', size: '23px' },
+      { family: 'Space Mono', size: '22px' },
+      { family: 'Merriweather', size: '24px' },
+    ];
+    const fontStyles = [
+      'normal',
+      'italic',
+    ];
+    const fontWeight = [
+      'normal',
+      'bold',
+    ];
+    let count = 0;
+    window.addEventListener('mousemove', () => {
+      count += 1;
+      if (count % 5 == 0) {
+        let fontIndex = Math.floor(Math.random() * fonts.length);
+        text.style.fontFamily = fonts[fontIndex].family;
+        text.style.fontSize = fonts[fontIndex].size;
+        text.style.fontStyle = fontStyles[Math.floor(Math.random() * fontStyles.length)];
+        text.style.fontWeight = fontWeight[Math.floor(Math.random() * fontWeight.length)];
+      }
+    });
+  </script>
+</html>
